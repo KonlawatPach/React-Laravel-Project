@@ -100,6 +100,9 @@ function CreateProduct() {
                                     <Button variant='primary' className='mt-2' size='lg' block="block" type='submit'>
                                         Save
                                     </Button>
+                                    <Button variant='danger' className='mt-2' size='lg' block="block" type='button' onClick={() => {navigate("/")}}>
+                                        Cancel
+                                    </Button>
                                 </Form>
                             </div>
                         </div>
