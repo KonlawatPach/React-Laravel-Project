@@ -17,6 +17,36 @@ function productList() {
     })
   }
 
+  const deleteProduct = async(id) => {
+    const isConfirm = await Swal.fire({
+      title : "Are you sure?",
+      text : "You won't be able to revert this!",
+      icon : "warning",
+      showCancelButton : true,
+      confirmButtonColor : '#3085D6',
+      cancelButtonColor : "#d33",
+      confirmButtonText : "Yes, delete it!"
+    }).then((result) => {
+      return result.isConfirmed
+    })
+
+    if(!isConfirm){
+      return;
+    }
+    await axios.delete(`http://127.0.0.1:8000/api/products/${id}`).then(({data}) => {
+      Swal.fire({
+        icon : 'success',
+        text : data.message
+      })
+      fetchProducts()
+    }).catch(({response:{data}}) => {
+      Swal.fire({
+        text: data.message,
+        icon: 'error'
+      })
+    })
+  }
+
   return (
     <div className='container'>
       <div className="row">
@@ -39,7 +69,7 @@ function productList() {
                 </thead>
                 <tbody>
                   {products.length > 0 ? (
-                    product.map((row, key) => (
+                    products.map((row, key) => (
                       <tr key={key}>
                         <td>{row.title}</td>
                         <td>{row.description}</td>
