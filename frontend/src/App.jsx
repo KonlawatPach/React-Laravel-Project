@@ -11,6 +11,7 @@ import CreateProduct from './components/CreateProduct';
 import EditProduct from './components/EditProduct';
 import MainPage from './components/MainPage';
 import FoodList from './components/FoodList';
+import CreateFood from './components/CreateFood';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -34,6 +35,7 @@ function App() {
               <Route exact path='/product/create' element={<CreateProduct />}></Route>
               <Route exact path='/product/edit/:id' element={<EditProduct />}></Route>
               <Route exact path='/food' element={<FoodList />}></Route>
+              <Route exact path='/food/create' element={<CreateFood />}></Route>
             </Routes>
           </Col>
         </Row>

@@ -48,7 +48,8 @@ function productList() {
   }
 
   return (
-    <div className='container mt-5'>
+    <div className='container'>
+      <h1 className='w-100 text-center mb-5'>รายการสินค้า</h1>
       <div className="row">
         <div className="col-12">
           <Link className='btn btn-primary mb-2 float-end' to={"/product/create"}>
