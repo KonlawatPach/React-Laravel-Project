@@ -54,7 +54,7 @@ function EditProduct() {
                 icon : "success",
                 text : data.message
             })
-            navigate("/")
+            navigate("/product")
         }).catch(({response}) => {
             if(response.status === 422){
                 setValidationError(response.data.errors)
@@ -123,7 +123,7 @@ function EditProduct() {
                                     <Button variant='primary' className='mt-2' size='lg' block="block" type='submit'>
                                         Update
                                     </Button>
-                                    <Button variant='danger' className='mt-2' size='lg' block="block" type='button' onClick={() => {navigate("/")}}>
+                                    <Button variant='danger' className='mt-2' size='lg' block="block" type='button' onClick={() => {navigate("/product")}}>
                                         Cancel
                                     </Button>
                                 </Form>

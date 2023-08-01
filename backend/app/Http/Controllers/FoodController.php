@@ -47,6 +47,7 @@ class FoodController extends Controller
         ]);
         
         try {
+            Food::create($request -> post());
             return response()->json([
                 'message' => 'Food created successfully!'
             ]);

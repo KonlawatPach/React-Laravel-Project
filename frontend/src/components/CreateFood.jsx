@@ -113,7 +113,7 @@ function CreateFood() {
                                 <Button variant='primary' className='mt-2' size='lg' block="block" type='submit'>
                                     Save
                                 </Button>
-                                <Button variant='danger' className='mt-2' size='lg' block="block" type='button' onClick={() => {navigate("/product")}}>
+                                <Button variant='danger' className='mt-2' size='lg' block="block" type='button' onClick={() => {navigate("/food")}}>
                                     Cancel
                                 </Button>
                             </Form>

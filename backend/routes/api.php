@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\Pingtest;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('food', FoodController::class);
 Route::resource('products', ProductController::class);
+
+Route::get('ping', [Pingtest::class, 'main']);

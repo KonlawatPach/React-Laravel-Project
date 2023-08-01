@@ -22,15 +22,12 @@ function FoodList() {
             title : `รายละเอียดของ ${foodData.name}`,
             width: "600",
             html : `
-                <div className="card p-0">
-                    <img className="card-img-top" style="width: 500px" src="${foodData.image}" alt="${foodData.name}" />
-                    <div className="card-body">
-                        <br />
-                        <div style="background-color: E3E3E3; height: 120px" className="card-body p-3 mb-4">
-                            <p className="card-text>${foodData.description}</p>
-                        </div>
-                        <p className="card-footer mt-3">ราคา ${Number(foodData.price)} บาท</p>
+                <div style="color: black;">
+                    <img style="width: 500px" src="${foodData.image}" alt="${foodData.name}" />
+                    <div style="background-color: E3E1E1; height: 100px; width: 500px; margin: 0 auto; padding: 10px 14px; overflow-y: auto;">
+                        <p style="text-align: left;">${foodData.description}</p> 
                     </div>
+                    <p style="margin-top: 10px;">ราคา ${Number(foodData.price)} บาท</p>
                 </div>
             `,
             showCancelButton: true,
@@ -67,10 +64,10 @@ function FoodList() {
                 {foodLists.length>0 ? (
                     foodLists.map((row, key) => (
                         <div key={key} className="card p-0" style={{ width: "18rem" }}>
-                            <img className="card-img-top" src={row.image} alt={row.name} />
+                            <img className="card-img-top" style={{ height: "10rem" }} src={row.image} alt={row.name} />
                             <div className="card-body">
                                 <h5 className="card-title">{row.name}</h5>
-                                <p className="card-text">{row.description.length>32?`${row.description.substring(0, 32)}...`:row.description}</p>
+                                <p className="card-text">{row.description.length>100?`${row.description.substring(0, 99)}...`:row.description}</p>
                                 <Button onClick={() => buttonSwal(row)} className="btn btn-primary">รายละเอียดเพิ่มเติม</Button>
                             </div>
                         </div>
